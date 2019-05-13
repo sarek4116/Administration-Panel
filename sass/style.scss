@@ -1,0 +1,107 @@
+@import "variables";
+@import "normalize";
+
+
+
+.top-menu {
+    display: flex;
+    justify-content: flex-end;
+
+    .amount-btn {
+        background-color: transparent;
+        border: 2px solid #e3e3e3;
+        border-bottom: none;
+        border-top: none;
+        color: #9c9c9c;
+        font-family: $main-font;
+        font-size: 20px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    .msg-btn {
+        @extend .amount-btn;
+        border: none;
+    }
+
+    .user-btn {
+        @extend .amount-btn;
+        color: #56819f;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    .logout-btn {
+        @extend .msg-btn;
+    }
+}
+
+.left-menu {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    background-color: $side-menu-bgc;
+    height: 100vh;
+    position: fixed;
+
+    .logo {
+        text-align: center;
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding: 20px;
+                cursor: pointer;
+                border: none;
+
+                &:hover {
+                    background-color: #282828;
+                    border-left: 4px solid #f58220;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $fontcolor-nav;
+                    font-family: $main-font;
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    .menager {
+        padding-top: 20px;
+        padding-left: 15px;
+        border-top: 1px solid #333333;
+        text-align: left;
+        color: #808080;
+        font-family: $main-font;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .your-menager {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-left: 10px;
+        cursor: pointer;
+
+        p {
+            padding-left: 15px;
+            color: #56819f;
+            font-family: $main-font;
+            font-size: 14px;
+            font-weight: 300;
+            cursor: pointer;
+        }
+    }
+
+
+}
