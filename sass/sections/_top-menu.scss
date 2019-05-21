@@ -1,0 +1,74 @@
+.top-menu {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e3e3e3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .amount-btn {
+        background-color: transparent;
+        border: 2px solid #e3e3e3;
+        border-bottom: none;
+        border-top: none;
+        color: #9c9c9c;
+        font-family: $main-font;
+        font-size: 20px;
+        font-weight: 400;
+        cursor: pointer;
+        padding: 10px;
+
+        &:hover {
+            background-color: rgba(177, 191, 191, 0.18);
+        }
+
+        .icon-wallet {
+            font-size: 16px;
+            margin-right: 5px;
+        }
+
+        .icon-arrow-down {
+            font-size: 12px;
+        }
+    }
+
+    .msg-btn {
+        @extend .amount-btn;
+        border: none;
+        padding: 20px;
+
+        &:hover {
+            background-color: rgba(177, 191, 191, 0.18);
+        }
+
+        span {
+            font-size: 16px;
+        }
+    }
+
+    .user-btn {
+        @extend .amount-btn;
+        color: #56819f;
+        font-size: 13px;
+        font-weight: 300;
+        padding: 15px;
+
+        &:hover {
+            background-color: rgba(177, 191, 191, 0.18);
+        }
+
+        span {
+            font-size: 15px;
+            margin-right: 5px;
+            color: #9c9c9c;
+        }
+    }
+
+    .logout-btn {
+        @extend .msg-btn;
+        padding: 20px;
+
+        &:hover {
+            background-color: rgba(177, 191, 191, 0.18);
+        }
+    }
+}

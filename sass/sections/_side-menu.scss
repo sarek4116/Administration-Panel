@@ -1,0 +1,85 @@
+.left-menu {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    background-color: $side-menu-bgc;
+    height: 100%;
+    position: fixed;
+
+    .logo {
+        text-align: center;
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding: 20px;
+                cursor: pointer;
+                border: none;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &:hover {
+                    background-color: #282828;
+                    border-left: 4px solid #f58220;
+                }
+
+                &:hover span {
+                    color: #ffffff;
+                }
+
+                &:hover a {
+                    color: #ffffff;
+                }
+
+                span {
+                    color: #818181;
+                }
+
+                a {
+                    padding-left: 7px;
+                    text-decoration: none;
+                    color: $fontcolor-nav;
+                    font-family: $main-font;
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    .menager {
+        padding-top: 20px;
+        padding-left: 15px;
+        border-top: 1px solid #333333;
+        text-align: left;
+        color: #808080;
+        font-family: $main-font;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .your-menager {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-left: 10px;
+        cursor: pointer;
+
+        p {
+            padding-left: 15px;
+            color: #56819f;
+            font-family: $main-font;
+            font-size: 14px;
+            font-weight: 300;
+            cursor: pointer;
+        }
+    }
+
+
+}

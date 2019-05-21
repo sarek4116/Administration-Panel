@@ -1,107 +1,119 @@
 @import "variables";
 @import "normalize";
+@import "containers";
+@import "Glyphter";
+@import "./sections/top-menu";
+@import "./sections/side-menu";
+@import "./sections/general";
 
-
-
-.top-menu {
-    display: flex;
-    justify-content: flex-end;
-
-    .amount-btn {
-        background-color: transparent;
-        border: 2px solid #e3e3e3;
-        border-bottom: none;
-        border-top: none;
-        color: #9c9c9c;
-        font-family: $main-font;
-        font-size: 20px;
-        font-weight: 400;
-        cursor: pointer;
-    }
-
-    .msg-btn {
-        @extend .amount-btn;
-        border: none;
-    }
-
-    .user-btn {
-        @extend .amount-btn;
-        color: #56819f;
-        font-size: 13px;
-        font-weight: 300;
-    }
-
-    .logout-btn {
-        @extend .msg-btn;
-    }
+body {
+    background-color: #e3e3e3;
 }
 
-.left-menu {
-    display: flex;
-    flex-direction: column;
-    width: 10%;
-    background-color: $side-menu-bgc;
-    height: 100vh;
-    position: fixed;
+.links {
+    background-color: #ffffff;
+    margin-bottom: 10px;
 
-    .logo {
-        text-align: center;
+    h2 {
+        color: #a6a6a6;
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-bottom: 2px solid #e3e3e3;
+        padding: 10px;
     }
 
-    nav {
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+    .link {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
 
-            li {
-                padding: 20px;
-                cursor: pointer;
-                border: none;
+        .first {
+            border-top: 2px solid #e3e3e3;
+        }
 
-                &:hover {
-                    background-color: #282828;
-                    border-left: 4px solid #f58220;
+        .pages {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e3e3e3;
+            cursor: pointer;
+            width: 686px;
+            padding: 5px;
+            transition: 0.2s linear;
+
+            &:hover {
+                background-color: rgba(177, 191, 191, 0.18);
+            }
+
+            &:hover .icons-pages {
+                opacity: 1;
+            }
+
+
+            &:hover a {
+                color: #ffa200;
+            }
+
+            p {
+                text-align: center;
+                color: #a6a6a6;
+                font-family: $main-font;
+                font-size: 16px;
+                font-weight: 700;
+                padding-left: 10px;
+            }
+
+            .icons-pages {
+                display: flex;
+                margin: 10px;
+                opacity: 0;
+                transition: 0.2s linear;
+
+                .icon-trash {
+                    padding-left: 10px;
+                    color: #9c9c9c;
+                    cursor: pointer;
                 }
 
-                a {
-                    text-decoration: none;
-                    color: $fontcolor-nav;
-                    font-family: $main-font;
-                    font-size: 14px;
-                    font-weight: 300;
+                .icon-links {
+                    padding-left: 10px;
+                    color: #f58220;
+                    cursor: pointer;
                 }
+            }
+
+            a {
+                align-self: center;
+                text-align: left;
+                width: 210px;
+                color: #56819f;
+                font-family: $main-font;
+                font-size: 16px;
+                font-weight: 300;
+                transition: 0.2s ease;
+            }
+        }
+
+        .add-btn {
+            color: #ffffff;
+            border: none;
+            font-family: $main-font;
+            font-size: 18px;
+            font-weight: 300;
+            width: 127px;
+            height: 40px;
+            border-radius: 3px;
+            background-color: $buttons-bgc;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: 0.2s linear;
+
+            &:hover {
+                background-color: #ffa200;
             }
         }
     }
-
-    .menager {
-        padding-top: 20px;
-        padding-left: 15px;
-        border-top: 1px solid #333333;
-        text-align: left;
-        color: #808080;
-        font-family: $main-font;
-        font-size: 14px;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-
-    .your-menager {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-left: 10px;
-        cursor: pointer;
-
-        p {
-            padding-left: 15px;
-            color: #56819f;
-            font-family: $main-font;
-            font-size: 14px;
-            font-weight: 300;
-            cursor: pointer;
-        }
-    }
-
-
 }

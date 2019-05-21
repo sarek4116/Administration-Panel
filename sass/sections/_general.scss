@@ -1,0 +1,133 @@
+.general {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin-top: 25px;
+
+    h2 {
+        margin: 0;
+        padding: 10px;
+        color: #a6a6a6;
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-bottom: 2px solid #e3e3e3;
+    }
+
+    .date {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px;
+
+        .numbers {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            border-radius: 3px;
+            border: 1px solid #e3e3e3;
+
+            p {
+                color: #333333;
+                font-family: $main-font;
+                font-size: 14px;
+                font-weight: 300;
+                padding: 0 20px;
+            }
+
+            .end-date {
+                @extend p;
+                padding: 0 10px;
+
+
+                .icon-calendar {
+                    padding-left: 30px;
+                }
+            }
+
+            .space {
+                width: 1px;
+                height: 29px;
+                background-color: #e3e3e3;
+                align-self: center;
+            }
+        }
+
+        .refresh-btn {
+            margin-left: 10px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 3px;
+            background-color: $buttons-bgc;
+            align-self: center;
+            color: #ffffff;
+            cursor: pointer;
+            transition: 0.2s ease;
+
+            &:hover {
+                background-color: #ffa200;
+            }
+
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .statistic {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-top: 2px solid #e3e3e3;
+
+        p {
+            display: flex;
+            justify-content: space-between;
+            color: #a6a6a6;
+            font-family: $main-font;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 25px 40px;
+            border-bottom: 2px solid #e3e3e3;
+            width: 310px;
+
+            span {
+                color: #333333;
+                font-family: $main-font;
+                font-size: 16px;
+                font-weight: 300;
+                align-self: flex-end;
+            }
+
+        }
+    }
+
+    .graph {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+
+
+        h3 {
+            color: #a6a6a6;
+            font-family: $main-font;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        img {
+            width: 655px;
+            height: 345px;
+            margin: 25px;
+        }
+    }
+
+}
