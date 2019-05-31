@@ -1,4 +1,4 @@
-.general {
+.payout {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -23,6 +23,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         padding: 20px;
+        border-bottom: 2px solid #e3e3e3;
 
         .numbers {
             display: flex;
@@ -44,17 +45,9 @@
                 @extend p;
                 padding: 0 10px;
 
-
                 .icon-calendar {
                     padding-left: 30px;
                 }
-            }
-
-            .space {
-                width: 1px;
-                height: 29px;
-                background-color: #e3e3e3;
-                align-self: center;
             }
         }
 
@@ -80,49 +73,102 @@
         }
     }
 
-    .statistic {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        border-top: 2px solid #e3e3e3;
-
-        p {
-            display: flex;
-            justify-content: space-between;
-            color: #a6a6a6;
-            font-family: $main-font;
-            font-size: 16px;
-            font-weight: 700;
-            margin: 25px 40px;
-            border-bottom: 2px solid #e3e3e3;
-            width: 310px;
-
-            span {
-                color: #333333;
-                font-family: $main-font;
-                font-size: 16px;
-                font-weight: 300;
-                align-self: flex-end;
-            }
-
-        }
-    }
-
-    .graph {
+    tbody {
+        text-align: center;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
-        align-content: center;
+        align-items: center;
+        max-width: 1200px;
 
-        h3 {
-            color: #a6a6a6;
-            font-family: $main-font;
-            font-size: 16px;
-            font-weight: 700;
-            margin-left: 10px;
+        .payout-info {
+            border: none;
+            cursor: default;
+
+            th:nth-of-type(1) {
+                padding: 10px;
+
+                &:hover {
+                    cursor: pointer;
+                    background: rgba(177, 191, 191, 0.18);
+                    color: black;
+                }
+            }
+
+            &:hover {
+                background: none;
+            }
+
+            th {
+                color: #a6a6a6;
+                font-family: $main-font;
+                font-size: 16px;
+                font-weight: 500;
+                width: 280px;
+
+                .icon-arrow-up-small {
+                    font-size: 12px;
+                }
+            }
         }
 
+        tr {
+            border-bottom: 2px solid #e3e3e3;
+            padding: 15px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(177, 191, 191, 0.18);
+            }
+        }
+
+        tr:nth-of-type(2) {
+            border-top: 2px solid #e3e3e3;
+        }
+
+        td {
+            width: 280px;
+        }
     }
 
+
+
+
+
+    .next-page {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0;
+
+        a {
+            text-decoration: none;
+            color: #56819f;
+            font-family: $main-font;
+            padding: 10px 15px;
+            font-weight: 300;
+
+            &:hover {
+                background-color: rgba(177, 191, 191, 0.18);
+                color: #a6a6a6;
+                font-weight: 500;
+            }
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            color: #a6a6a6;
+        }
+    }
+}
+
+
+@media(max-width: 767px) {
+    .payout {
+        .next-page {
+            a {
+                padding: 5px 10px;
+            }
+        }
+    }
 }

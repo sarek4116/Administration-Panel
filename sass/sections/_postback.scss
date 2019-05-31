@@ -1,0 +1,235 @@
+.postback {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin-top: 25px;
+
+    h2 {
+        margin: 0;
+        padding: 10px;
+        color: #a6a6a6;
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-bottom: 2px solid #e3e3e3;
+    }
+
+    .top-pg {
+        font-family: $main-font;
+        padding: 15px;
+    }
+
+    .text-area {
+        display: flex;
+        justify-content: space-around;
+
+        p {
+            color: #a6a6a6;
+            font-family: $main-font;
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+
+        textarea {
+            border: 1px solid #e3e3e3;
+            color: #a6a6a6;
+            padding: 5px;
+        }
+    }
+
+    .postback-options {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        p {
+            color: #a6a6a6;
+            font-family: $main-font;
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 5px;
+        }
+
+        .postback-option {
+            padding: 25px;
+
+            select {
+                width: 300px;
+                border: 1px solid #e3e3e3;
+                color: #a6a6a6;
+                padding: 5px;
+            }
+
+        }
+    }
+
+    .send-options {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: 2px solid #e3e3e3;
+        margin-top: 10px;
+        border-bottom: 2px solid #e3e3e3;
+
+        .send-status {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-right: 2px solid #e3e3e3;
+            width: 50%;
+
+            p {
+                color: #a6a6a6;
+                font-family: $main-font;
+                font-size: 16px;
+                font-weight: 600;
+                padding-bottom: 5px;
+                padding: 10px;
+
+                span {
+                    color: red;
+                }
+            }
+
+            div {
+                padding: 10px;
+
+                label {
+                    padding-left: 5px;
+                    font-family: $main-font;
+                }
+            }
+
+            div.scroll {
+                overflow-y: scroll;
+                height: 200px;
+                width: 100px;
+                margin-right: 10px;
+                align-self: center;
+            }
+        }
+
+        .send-time {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+            p {
+                color: #a6a6a6;
+                font-family: $main-font;
+                font-size: 16px;
+                font-weight: 600;
+                padding: 20px;
+            }
+
+            input[type="range"] {
+                align-self: center;
+                width: 90%;
+            }
+        }
+    }
+
+    .btn {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            color: #ffffff;
+            border: none;
+            font-family: $main-font;
+            font-size: 18px;
+            font-weight: 300;
+            padding: 10px 20px;
+            border-radius: 3px;
+            background-color: $buttons-bgc;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.2s linear;
+
+
+            &:hover {
+                background-color: #ffa200;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 767px) {
+    .postback {
+        p {
+            text-align: center;
+        }
+
+        .text-area {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            textarea {
+                width: 100%;
+            }
+        }
+
+        .postback-options {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .send-options {
+            .send-status {
+                div.scroll {
+                    height: 0px;
+                    width: 0;
+                }
+            }
+
+            .send-time {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (max-width:1200px) {
+    .postback {
+        p {
+            text-align: center;
+        }
+
+        .text-area {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            textarea {
+                width: 100%;
+            }
+        }
+
+        .postback-options {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .send-options {
+            .send-status {
+                div.scroll {
+                    height: 0px;
+                    width: 0;
+                }
+            }
+
+            .send-time {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    }
+}

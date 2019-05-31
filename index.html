@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Administration-Panel</title>
@@ -14,24 +16,68 @@
 
     <!-- Side Left-Menu -->
 
-    <aside class="left-menu">
-        <h2 class="logo"><img src="./images/logo.png" alt="just do it logo"></h2>
-        <nav>
-            <ul>
-                <li> <span class="icon-general"></span> <a href="">General</a></li>
-                <li> <span class="icon-details"></span> <a href="">Details</a></li>
-                <li> <span class="icon-links"></span> <a href="">Links</a></li>
-                <li> <span class="icon-banners"></span> <a href="">Banners</a></li>
-                <li> <span class="icon-personaldata"></span> <a href="">Personal Data</a></li>
-                <li> <span class="icon-payout"></span> <a href="">Payout</a></li>
-                <li> <span class="icon-postback"></span> <a href="">Postback</a></li>
-            </ul>
-        </nav>
-        <h2 class="menager">your manager</h2>
-        <div class="your-menager">
-            <img src="./images/photo.png" alt="photo">
-            <p>Mikhael E.</p>
+    <aside class="left-menu" id="sidebar">
+        <h2 class="logo"><img src="./images/logo.png" alt="just do it logo"><button class="fas fa-bars menu"
+                id="hamburger"></button>
+        </h2>
+        <div class="scroll">
+            <nav class="menu">
+                <ul>
+                    <li> <a href="#general-stat"> <span class="icon-general"></span> General</a></li>
+                    <li> <a href="#details"> <span class="icon-details"></span> Details</a></li>
+                    <li> <a href="#links"> <span class="icon-links"></span> Links</a></li>
+                    <li> <a href="#banners"> <span class="icon-banners"></span> Banners</a></li>
+                    <li> <a href="#personal-data"> <span class="icon-personaldata"></span> Personal Data</a></li>
+                    <li> <a href="#payout"> <span class="icon-payout"></span> Payout</a></li>
+                    <li> <a href="#postback"> <span class="icon-postback"></span> Postback</a></li>
+                </ul>
+            </nav>
+            <div class="smartMenu">
+                <button class="amount-btn">
+                    <span class="icon-wallet"></span> $1,500.00 <span class="icon-arrow-down"></span>
+                </button>
+                <button class="msg-btn"><span class="icon-notification">
+                        <div class="status"></div>
+                    </span>Notification</button>
+                <button class="user-btn">
+                    <span class="icon-profile"></span> Leonardo Dicaprio
+                </button>
+                <button class="logout-btn" id="logout"><span class="icon-quit"></span> Exit</button>
+            </div>
+            <h2 class="menager">your manager</h2>
+            <div class="your-menager">
+                <img src="./images/photo.png" alt="photo">
+                <div class="status"></div>
+                <p data-target="#modal-3">Mikhael E.</p>
+            </div>
         </div>
+
+        <div id="modal-3" class="modal chat-modal">
+            <div class="modal__body-chat">
+                <h2>online chat with your personal manager</h2>
+                <div class="manager-img">
+                    <img src="./images/photo.png" alt="photo">
+                    <div>
+                        <p>Michael E. <br> <span>online</span></p>
+                    </div>
+                </div>
+                <div class="input" id="output">
+
+                    <p>Hello. Can I help you ?</p>
+
+                    <p>Hello! I would like to know about Postback.</p>
+
+                    <p>Ok. 5min..</p>
+
+                </div>
+
+                <div class="message">
+                    <input type="text" placeholder="Enter the message.." id="input">
+                    <button id="send">Send</button>
+                </div>
+            </div>
+        </div>
+
     </aside>
 
     <!-- Header Top-Menu -->
@@ -40,15 +86,40 @@
         <button class="amount-btn">
             <span class="icon-wallet"></span> $1,500.00 <span class="icon-arrow-down"></span>
         </button>
-        <button class="msg-btn"><span class="icon-notification"></span></button>
-        <button class="user-btn">
+        <button class="msg-btn"><span class="icon-notification">
+                <div class="status"></div>
+            </span></button>
+        <button class="user-btn" data-target="#modal-2">
             <span class="icon-profile"></span> Leonardo Dicaprio
         </button>
-        <button class="logout-btn"><span class="icon-quit"></span></button>
+        <div id="modal-2" class="modal login-modal">
+            <div class="modal__body-login">
+                <h2>Login</h2>
+                <div class="login">
+                    <form action="">
+                        <input type="text" placeholder="login name">
+                        <input type="password" placeholder="password">
+                    </form>
+                    <button class="enter">Enter</button>
+                </div>
+            </div>
+        </div>
+        <button class="logout-btn" data-target="#modal-1"><span class="icon-quit"></span></button>
+        <div id="modal-1" class="modal quit">
+            <div class="modal__body">
+                <h2>Do you really want to Quit?</h2>
+                <div class="btns">
+                    <button class="cancel" id="cancel">Cancel</button>
+                    <button class="quit-btn" id="quit" type="button" value="Close this window"
+                        onclick="windowClose();">Quit</button>
+                </div>
+            </div>
+        </div>
     </header>
 
+
     <!-- Section General-Informations -->
-    <section class="general container">
+    <section class="general container show" id="general-stat">
         <h2>general statistic</h2>
         <div class="date">
             <div class="numbers">
@@ -71,11 +142,13 @@
 
         <div class="graph">
             <h3>Earnings Chart</h3>
-            <img src="./images/graph.png" alt="graph">
+            <canvas id="myChart"></canvas>
         </div>
     </section>
 
-    <section class="links container">
+    <!-- Section Links -->
+
+    <section class="links container" id="links">
         <h2>Links</h2>
         <div class="link">
             <button class="add-btn">+ add new</button>
@@ -163,6 +236,441 @@
         </div>
     </section>
 
+    <!-- Section Details -->
+
+    <section class="details container" id="details">
+        <h2>detail statistic</h2>
+        <div class="date">
+            <div class="numbers">
+                <p> 16.05.2016 </p>
+                <span class="space"></span>
+                <p class="end-date"> 16.05.2016 <span class="icon-calendar"></span> </p>
+            </div>
+            <button class="refresh-btn"> <span class="icon-refresh"></span> </button>
+        </div>
+        <div class="informations ">
+            <div class="scroll-wrapper">
+                <table>
+                    <div class="data-type">
+                        <p>Tracker name</p>
+                        <p>Initiated date</p>
+                        <p>Visits</p>
+                        <p>Unique</p>
+                        <p>Signups</p>
+                        <p>FTD</p>
+                        <p>Depositors</p>
+                        <p>Deposits($) <span class="icon-arrow-up-small"></span> </p>
+                        <p>Payout($)</p>
+                        <p>Turnover</p>
+                        <p>Deal</p>
+                    </div>
+
+                    <div class="data">
+                        <p>aff/sam_test</p>
+                        <p>17/08/02(12:58)</p>
+                        <p>232</p>
+                        <p>114</p>
+                        <p>12</p>
+                        <p>6</p>
+                        <p>3</p>
+                        <p>34,425.00</p>
+                        <p>234.00</p>
+                        <p>421,342.00</p>
+                        <p>cpl(200)</p>
+                    </div>
+                    <div class="data">
+                        <p>aff/leo_test</p>
+                        <p>15/08/02(12:58)</p>
+                        <p>232</p>
+                        <p>114</p>
+                        <p>12</p>
+                        <p>6</p>
+                        <p>3</p>
+                        <p>29,436.00</p>
+                        <p>941.00</p>
+                        <p>784,435.00</p>
+                        <p>cpl(200)</p>
+                    </div>
+                    <div class="data">
+                        <p>aff/sam_test</p>
+                        <p>17/08/02(12:58)</p>
+                        <p>232</p>
+                        <p>114</p>
+                        <p>12</p>
+                        <p>6</p>
+                        <p>3</p>
+                        <p>34,425.00</p>
+                        <p>234.00</p>
+                        <p>421,342.00</p>
+                        <p>cpl(200)</p>
+                    </div>
+                    <div class="data">
+                        <p>aff/leo_test</p>
+                        <p>15/08/02(12:58)</p>
+                        <p>232</p>
+                        <p>114</p>
+                        <p>12</p>
+                        <p>6</p>
+                        <p>3</p>
+                        <p>29,436.00</p>
+                        <p>941.00</p>
+                        <p>784,435.00</p>
+                        <p>cpl(200)</p>
+                    </div>
+                    <div class="data">
+                        <p>aff/sam_test</p>
+                        <p>17/08/02(12:58)</p>
+                        <p>232</p>
+                        <p>114</p>
+                        <p>12</p>
+                        <p>6</p>
+                        <p>3</p>
+                        <p>34,425.00</p>
+                        <p>234.00</p>
+                        <p>421,342.00</p>
+                        <p>cpl(200)</p>
+                    </div>
+                    <div class="data">
+                        <p>aff/leo_test</p>
+                        <p>15/08/02(12:58)</p>
+                        <p>232</p>
+                        <p>114</p>
+                        <p>12</p>
+                        <p>6</p>
+                        <p>3</p>
+                        <p>29,436.00</p>
+                        <p>941.00</p>
+                        <p>784,435.00</p>
+                        <p>cpl(200)</p>
+                    </div>
+                    <div class="data">
+                        <p>aff/sam_test</p>
+                        <p>17/08/02(12:58)</p>
+                        <p>232</p>
+                        <p>114</p>
+                        <p>12</p>
+                        <p>6</p>
+                        <p>3</p>
+                        <p>34,425.00</p>
+                        <p>234.00</p>
+                        <p>421,342.00</p>
+                        <p>cpl(200)</p>
+                    </div>
+                    <div class="data">
+                        <p>aff/leo_test</p>
+                        <p>15/08/02(12:58)</p>
+                        <p>232</p>
+                        <p>114</p>
+                        <p>12</p>
+                        <p>6</p>
+                        <p>3</p>
+                        <p>29,436.00</p>
+                        <p>941.00</p>
+                        <p>784,435.00</p>
+                        <p>cpl(200)</p>
+                    </div>
+                </table>
+            </div>
+        </div>
+        <div class="next-page">
+            <button> <span class="icon-arrow-left"></span> </button>
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+            <a href="">5</a>
+            <a href="">6</a>
+            <a href="">7</a>
+            <a href="">8</a>
+            <a href="">9</a>
+            <button> <span class="icon-arrow-right"></span> </button>
+        </div>
+    </section>
+
+    <!-- Section Banners -->
+
+    <section class="banners container" id="banners">
+        <h2>Banners</h2>
+        <div class="link">
+            <button class="add-btn">+ add new</button>
+            <div class="first pages">
+                <p>Banner main</p>
+                <a href="">http://www.website.com/bannermain.gif</a>
+                <div class="icons-pages">
+                    <span class="icon-links"></span>
+                    <span class="icon-trash"></span>
+                </div>
+            </div>
+            <div class="pages">
+                <p>Sign up banner</p>
+                <a href="">http://www.website.com/signup.gif</a>
+                <div class="icons-pages">
+                    <span class="icon-links"></span>
+                    <span class="icon-trash"></span>
+                </div>
+            </div>
+            <div class="pages">
+                <p>Banner left side</p>
+                <a href="">http://www.website.com/leftside.gif</a>
+                <div class="icons-pages">
+                    <span class="icon-links"></span>
+                    <span class="icon-trash"></span>
+                </div>
+            </div>
+            <div class="pages">
+                <p>Vertical banner</p>
+                <a href="">http://www.website.com/vert.gif</a>
+                <div class="icons-pages">
+                    <span class="icon-links"></span>
+                    <span class="icon-trash"></span>
+                </div>
+            </div>
+            <div class="pages">
+                <p>Front banner</p>
+                <a href="">http://www.website.com/front.gif</a>
+                <div class="icons-pages">
+                    <span class="icon-links"></span>
+                    <span class="icon-trash"></span>
+                </div>
+            </div>
+            <div class="pages">
+                <p>Horizontal banner</p>
+                <a href="">http://www.website.com/horizontal.gif</a>
+                <div class="icons-pages">
+                    <span class="icon-links"></span>
+                    <span class="icon-trash"></span>
+                </div>
+            </div>
+            <button class="add-btn">+ add new</button>
+    </section>
+
+    <!-- Section Personal-Data -->
+
+    <section class="personal-data container" id="personal-data">
+        <h2>personal data</h2>
+        <div class="data-wrapper">
+            <div class="data">
+                <form action="" method="POST">
+                    <div class="field">
+                        <label>Name</label>
+                        <input type="text" name="user-name">
+                    </div>
+                    <div class="field">
+                        <label>Surname</label>
+                        <input type="text" name="user-surname">
+                    </div>
+
+                    <div class="field">
+                        <label>E-mail</label>
+                        <input type="email" name="user-email">
+                    </div>
+                    <div class="field">
+                        <label>Phone number</label>
+                        <input type="tel" name="user-phone">
+                    </div>
+                </form>
+            </div>
+            <div class="data">
+                <form action="" method="POST">
+                    <div class="field">
+                        <label>Skype</label>
+                        <input type="text" name="user-skype">
+                    </div>
+                    <div class="field">
+                        <label>ICQ</label>
+                        <input type="text" name="user-ICQ">
+                    </div>
+                    <div class="field">
+                        <label>Msn</label>
+                        <input type="text" name="user-msn">
+                    </div>
+                </form>
+            </div>
+            <div class="data">
+                <form action="" method="POST">
+                    <div class="field">
+                        <label>Wallet</label>
+                        <input type="text" name="user-wallet">
+                    </div>
+                </form>
+            </div>
+            <div class="data">
+                <form action="" method="POST">
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" name="user-password">
+                    </div>
+                    <div class="field">
+                        <label>Repeat</label>
+                        <input type="password" name="user-password">
+                    </div>
+                </form>
+            </div>
+            <button>Save</button>
+        </div>
+    </section>
+
+    <!-- Section Payout -->
+
+    <section class="payout container" id="payout">
+        <h2>payout history</h2>
+        <div class="date">
+            <div class="numbers">
+                <p> 16.05.2016 </p>
+                <span class="space"></span>
+                <p class="end-date"> 16.05.2016 <span class="icon-calendar"></span> </p>
+            </div>
+            <button class="refresh-btn"> <span class="icon-refresh"></span> </button>
+        </div>
+
+        <table class="payout-data">
+            <tbody class="container">
+                <tr class="payout-info">
+                    <th>Date <span class="icon-arrow-up-small"></span> </th>
+                    <th>Amount($)</th>
+                    <th>Deal</th>
+                    <th>Account</th>
+                </tr>
+                <tr>
+                    <td>17/08/02(12:58)</td>
+                    <td>34,425.00</td>
+                    <td>cpl(200)</td>
+                    <td>bank</td>
+                </tr>
+
+                <tr>
+                    <td>15/08/02(12:58)</td>
+                    <td>29,436.00</td>
+                    <td>cpl(200)</td>
+                    <td>bank</td>
+                </tr>
+                <tr>
+                    <td>17/08/02(12:58)</td>
+                    <td>34,425.00</td>
+                    <td>cpl(200)</td>
+                    <td>bank</td>
+                </tr>
+                <tr>
+                    <td>15/08/02(12:58)</td>
+                    <td>29,436.00</td>
+                    <td>cpl(200)</td>
+                    <td>bank</td>
+                </tr>
+                <tr>
+                    <td>17/08/02(12:58)</td>
+                    <td>34,425.00</td>
+                    <td>cpl(200)</td>
+                    <td>bank</td>
+                </tr>
+                <tr>
+                    <td>15/08/02(12:58)</td>
+                    <td>29,436.00</td>
+                    <td>cpl(200)</td>
+                    <td>bank</td>
+                </tr>
+                <tr>
+                    <td>17/08/02(12:58)</td>
+                    <td>34,425.00</td>
+                    <td>cpl(200)</td>
+                    <td>bank</td>
+                </tr>
+                <tr>
+                    <td>15/08/02(12:58)</td>
+                    <td>29,436.00</td>
+                    <td>cpl(200)</td>
+                    <td>bank</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="next-page">
+            <button> <span class="icon-arrow-left"></span> </button>
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+            <a href="">5</a>
+            <a href="">6</a>
+            <a href="">7</a>
+            <a href="">8</a>
+            <a href="">9</a>
+            <button> <span class="icon-arrow-right"></span> </button>
+        </div>
+    </section>
+
+    <!-- Section Postback -->
+
+    <section class="postback container" id="postback">
+        <h2>New postback</h2>
+        <p class="top-pg">You can insert some paramteres in this postback:</p>
+        <div class="text-area">
+            <div class="signup">
+                <p>Signup</p>
+                <textarea name="" id="" cols="80" rows="8"></textarea>
+            </div>
+            <div class="deposit">
+                <p>Deposit</p>
+                <textarea name="" id="" cols="80" rows="8"></textarea>
+            </div>
+        </div>
+        <div class="postback-options">
+            <div class="postback-option">
+                <p>Postback type</p>
+                <select name="type">
+                    <option value="">S2S(http://...)</option>
+                </select>
+            </div>
+            <div class="postback-option">
+                <p>To countries</p>
+                <select name="countries">
+                    <option value="">Select countries</option>
+                </select>
+            </div>
+            <div class="postback-option">
+                <p>Sending options:</p>
+                <select name="sending">
+                    <option value="">Select</option>
+                </select>
+            </div>
+        </div>
+        <div class="send-options">
+            <div class="send-status">
+                <div class="wrapper">
+                    <p> <span>NOT</span> send statuses </p>
+
+                    <div>
+                        <input type="checkbox" name="" value="">
+                        <label for="">checkNumber</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" value="">
+                        <label for="">noAnswer</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" value="">
+                        <label for="">noCall</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" value="">
+                        <label for="">callAgain</label>
+                    </div>
+                </div>
+                <div class="scroll"></div>
+            </div>
+            <div class="send-time">
+                <p>Send after:</p>
+
+                <input type="range" name="hours" min="0" max="168">
+
+            </div>
+        </div>
+        <div class="btn">
+            <button>Create Pixel</button>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

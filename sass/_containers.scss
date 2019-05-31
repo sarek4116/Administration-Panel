@@ -1,5 +1,12 @@
 .container {
-    max-width: 1260px;
-    width: 100%;
-    margin: 0 auto;
+    width: calc(100% - 240px);
+    margin: 20px;
+    margin-left: 220px;
+}
+
+@media(max-width:768px) {
+    .container {
+        width: 100%;
+        margin: 0;
+    }
 }

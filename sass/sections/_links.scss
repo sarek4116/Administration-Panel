@@ -1,0 +1,137 @@
+.links {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+
+    h2 {
+        color: #a6a6a6;
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-bottom: 2px solid #e3e3e3;
+        padding: 10px;
+    }
+
+    .link {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .first {
+            border-top: 2px solid #e3e3e3;
+        }
+
+        .pages {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e3e3e3;
+            cursor: pointer;
+            width: 686px;
+            padding: 5px;
+            transition: 0.2s linear;
+
+            &:hover {
+                background-color: rgba(177, 191, 191, 0.18);
+            }
+
+            &:hover .icons-pages {
+                opacity: 1;
+            }
+
+
+            &:hover a {
+                color: #ffa200;
+            }
+
+            p {
+                width: 120px;
+                color: #a6a6a6;
+                font-family: $main-font;
+                font-size: 16px;
+                font-weight: 700;
+                padding-left: 10px;
+            }
+
+            .icons-pages {
+                display: flex;
+                margin: 10px;
+                opacity: 0;
+                transition: 0.2s linear;
+
+                .icon-trash {
+                    padding-left: 10px;
+                    color: #9c9c9c;
+                    cursor: pointer;
+                }
+
+                .icon-links {
+                    padding-left: 10px;
+                    color: #f58220;
+                    cursor: pointer;
+                }
+            }
+
+            a {
+                min-width: 250px;
+                text-align: left;
+                color: #56819f;
+                font-family: $main-font;
+                font-size: 16px;
+                font-weight: 300;
+                transition: 0.2s ease;
+                padding-left: 20px;
+            }
+        }
+
+        .add-btn {
+            color: #ffffff;
+            border: none;
+            font-family: $main-font;
+            font-size: 18px;
+            font-weight: 300;
+            padding: 10px 20px;
+            border-radius: 3px;
+            background-color: $buttons-bgc;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: 0.2s linear;
+
+            &:hover {
+                background-color: #ffa200;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+
+    .links {
+        .link {
+
+            .pages {
+                width: 100%;
+
+                p {
+                    width: 150px;
+                }
+
+                .icons-pages {
+                    .icon-trash {
+                        opacity: 0;
+                    }
+
+                    .icon-links {
+                        opacity: 0;
+                    }
+                }
+
+                a {
+                    min-width: 100px;
+                }
+            }
+
+        }
+    }
+}
