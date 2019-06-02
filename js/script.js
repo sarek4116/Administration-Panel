@@ -66,6 +66,8 @@ function closeModal() {
     document.getElementById('modal-1').classList.remove('show')
     document.getElementById('modal-2').classList.remove('show')
     document.getElementById('modal-3').classList.remove('show')
+    document.getElementById('modal-4').classList.remove('show')
+    document.getElementById('modal-5').classList.remove('show')
 }
 
 for (let i = 0; i < buttons.length; i++) {
@@ -111,6 +113,23 @@ document.querySelector('#modal-2').addEventListener('click', function (e) {
 
 
 document.querySelector('#modal-3').addEventListener('click', function (e) {
+    if (e.target === this) {
+        closeModal();
+    }
+})
+
+
+// Add Link Modal
+
+document.querySelector('#modal-4').addEventListener('click', function (e) {
+    if (e.target === this) {
+        closeModal();
+    }
+})
+
+// Add Link Banner
+
+document.querySelector('#modal-5').addEventListener('click', function (e) {
     if (e.target === this) {
         closeModal();
     }

@@ -59,6 +59,16 @@
                 border: 1px solid #e3e3e3;
                 color: #a6a6a6;
                 padding: 5px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background-color: #ffffff;
+                border-radius: 0;
+                background-image: url(https://image.flaticon.com/icons/png/128/118/118738.png);
+                background-size: 15px auto;
+                background-repeat: no-repeat;
+                background-position: right 5px center;
+
             }
 
         }
