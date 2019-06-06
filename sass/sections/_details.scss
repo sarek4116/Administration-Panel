@@ -89,6 +89,7 @@
             margin: 0 auto;
             text-align: center;
             border-bottom: 2px solid #e3e3e3;
+            padding: 0 5px;
 
             p {
                 color: #a6a6a6;
@@ -96,6 +97,7 @@
                 font-size: 16px;
                 font-weight: 500;
                 width: 110px;
+                padding: 0 3px;
 
                 .icon-arrow-up-small {
                     font-size: 12px;
@@ -130,7 +132,7 @@
             margin: 0 auto;
             border-bottom: 2px solid #e3e3e3;
             max-width: 1200px;
-            padding: 10px 0;
+            padding: 10px 5px;
             text-align: center;
             transition: 0.2s linear;
             cursor: pointer;
@@ -335,7 +337,7 @@
                 margin: 0 auto;
                 border-bottom: 2px solid #e3e3e3;
                 width: 1200px;
-                padding: 10px 0;
+                padding: 10px 5px;
                 text-align: center;
                 transition: 0.2s linear;
                 cursor: pointer;

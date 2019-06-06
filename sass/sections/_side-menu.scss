@@ -25,7 +25,7 @@
             margin: 0;
 
             li {
-                padding: 15px;
+
                 cursor: pointer;
                 border: none;
                 display: flex;
@@ -57,6 +57,8 @@
                     font-family: $main-font;
                     font-size: 15px;
                     font-weight: 300;
+                    padding: 15px;
+                    width: 100%;
                 }
             }
         }
@@ -194,6 +196,7 @@
 .chat-modal {
     display: flex;
     flex-direction: column;
+    z-index: 9999;
 
     .modal__body-chat {
         max-width: 1000px;
@@ -248,10 +251,10 @@
         }
 
         .input {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
+            display: inline-block;
             height: 400px;
+            min-width: 250px;
+            width: 100%;
 
             p {
                 background-color: #e3e3e3;
